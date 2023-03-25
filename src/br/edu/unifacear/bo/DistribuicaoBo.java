@@ -25,7 +25,7 @@ public class DistribuicaoBo {
 			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
 		}
 		if (distribuicao.getDescricao().equals("")) {
-			throw new Exception ("Descricao deve estar preenchido!");
+			throw new Exception ("Descrição deve estar preenchido!");
 		}
 		
 		DistribuicaoDao distribuicaoDao = new DistribuicaoDao();

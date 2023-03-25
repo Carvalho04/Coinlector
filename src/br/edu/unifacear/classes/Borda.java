@@ -2,7 +2,7 @@ package br.edu.unifacear.classes;
 
 import java.util.Objects;
 
-public class TipoBorda {
+public class Borda {
 
 	
 	//Attributes
@@ -29,12 +29,12 @@ public class TipoBorda {
 	
 	//Constructor
 	
-	public TipoBorda() {
+	public Borda() {
 		super();
 	}
 	
 	
-	public TipoBorda(int id, String descricao) {
+	public Borda(int id, String descricao) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
@@ -56,7 +56,7 @@ public class TipoBorda {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		TipoBorda other = (TipoBorda) obj;
+		Borda other = (Borda) obj;
 		return Objects.equals(descricao, other.descricao) && id == other.id;
 	}
 	

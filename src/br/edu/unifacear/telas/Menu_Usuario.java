@@ -23,6 +23,14 @@ public class Menu_Usuario extends JFrame{
 		JButton btnConsultaCatalogo = new JButton("Consultar Catálogo");
 		btnConsultaCatalogo.setForeground(new Color(128, 128, 0));
 		btnConsultaCatalogo.setBackground(Color.BLACK);
+		btnConsultaCatalogo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Catalogo_Usuario catalogo = new Catalogo_Usuario();
+				Menu_Usuario.this.dispose();
+				
+			}
+		});
 		btnConsultaCatalogo.setBounds(55, 131, 144, 64);
 		getContentPane().add(btnConsultaCatalogo);
 		
@@ -31,6 +39,10 @@ public class Menu_Usuario extends JFrame{
 		btnConsultaPerfil.setBackground(Color.BLACK);
 		btnConsultaPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Perfil_Usuario perfil = new Perfil_Usuario();
+				Menu_Usuario.this.dispose();
+				
 			}
 		});
 		btnConsultaPerfil.setBounds(262, 131, 144, 64);

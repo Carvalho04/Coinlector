@@ -1,6 +1,8 @@
 package br.edu.unifacear.telas;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
@@ -90,6 +92,14 @@ public class Perfil_Usuario extends JFrame{
 		getContentPane().add(btnExcluir);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Menu_Usuario Menu = new Menu_Usuario();
+				Perfil_Usuario.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(192, 438, 89, 23);
 		getContentPane().add(btnVoltar);
 	
@@ -112,7 +122,10 @@ public class Perfil_Usuario extends JFrame{
 				ItemVendas.setBackground(Color.LIGHT_GRAY);
 			}
 			public void mousePressed(MouseEvent e) {
-//				TelaCadastro tela = new TelaCadastro();
+
+				Venda_Usuario venda = new Venda_Usuario();
+				Perfil_Usuario.this.dispose();
+				
 			}
 			});
 		
@@ -131,7 +144,9 @@ public class Perfil_Usuario extends JFrame{
 		}
 		public void mousePressed(MouseEvent e) {
 			
-//			TelaCadastro tela = new TelaCadastro();
+			Colecao_Usuario colecao = new Colecao_Usuario();
+			Perfil_Usuario.this.dispose();
+			
 		}
 		});
 		
@@ -149,7 +164,10 @@ public class Perfil_Usuario extends JFrame{
 			ItemMinhasCompras.setBackground(Color.LIGHT_GRAY);
 		}
 		public void mousePressed(MouseEvent e) {
-//			TelaCadastro tela = new TelaCadastro();
+			
+			Compras_Usuario compras = new Compras_Usuario();
+			Perfil_Usuario.this.dispose();
+			
 		}
 		});
 		

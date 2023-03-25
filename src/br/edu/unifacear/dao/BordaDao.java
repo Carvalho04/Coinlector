@@ -1,18 +1,22 @@
 package br.edu.unifacear.dao;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.*;
 
-import br.edu.unifacear.classes.TipoBorda;
+import br.edu.unifacear.classes.Borda;
+import br.edu.unifacear.jdbc.Fabrica;
 
-public class TipoBordaDao {
+public class BordaDao {
 	
-	public TipoBordaDao() { 	}
+	public BordaDao() { 	}
 	
-		public void selecionarTipoBorda(TipoBorda tipoBorda) {
+		public void selecionarTipoBorda(Borda tipoBorda) {
 			System.out.println("Tipo de Borda Selecionado");		
 		}
 	
-		public void salvarTipoBorda(TipoBorda tpBorda) {
+		public void salvarTipoBorda(Borda tpBorda) {
 			System.out.println("Tipo Borda Salvo");
 		}
 		
@@ -20,7 +24,7 @@ public class TipoBordaDao {
 //		System.out.println("Tipo de Borda Inserido");
 //		}
 		
-		public void editarTipoBorda(TipoBorda tpBorda) {
+		public void editarTipoBorda(Borda tpBorda) {
 			System.out.println("Tipo de Borda Editado");
 		}
 		
@@ -28,9 +32,11 @@ public class TipoBordaDao {
 			System.out.println("Tipo de Borda Deletado");
 		}
 		
-		public List<TipoBorda> listarTipoBorda() {
+		public List<Borda> listarTipoBorda() {
 			System.out.println("Lista Tipo de Borda");	
-			List<TipoBorda> lista = new ArrayList<TipoBorda>(); 
+			List<Borda> lista = new ArrayList<Borda>(); 
 			return lista;
-		}		
+		}
+		
+	
 }

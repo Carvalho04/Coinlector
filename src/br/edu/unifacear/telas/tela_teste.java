@@ -8,7 +8,7 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JMenuItem;
-import br.edu.unifacear.telas.TelaCadastro;
+import br.edu.unifacear.telas.Cadastro_Usuario;
 
 
 public class tela_teste extends JFrame {
@@ -34,7 +34,7 @@ public class tela_teste extends JFrame {
 		
 		mntmNewMenuItem_3.addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e) {
-				TelaCadastro tela = new TelaCadastro();
+				Cadastro_Usuario tela = new Cadastro_Usuario();
 			}
 			});
 		

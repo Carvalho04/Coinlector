@@ -1,14 +1,14 @@
 package br.edu.unifacear.bo;
 
 import java.util.*;
-import br.edu.unifacear.classes.TipoBorda;
-import br.edu.unifacear.dao.TipoBordaDao;
+import br.edu.unifacear.classes.Borda;
+import br.edu.unifacear.dao.BordaDao;
 
-public class TipoBordaBo {
+public class BordaBo {
 	
-	public TipoBordaBo () { 	}
+	public BordaBo () { 	}
 
-	public void salvarTipoBorda(TipoBorda tpBorda) throws Exception {
+	public void salvarTipoBorda(Borda tpBorda) throws Exception {
 		
 		if (tpBorda.getId() <= 0) {
 			throw new Exception ("Id não pode ser igual ou menor que zero(0)");
@@ -19,12 +19,12 @@ public class TipoBordaBo {
 		
 		System.out.println("Validações de Tipo Borda - OK");
 		
-		TipoBordaDao tpBordaDao = new TipoBordaDao();
+		BordaDao tpBordaDao = new BordaDao();
 		tpBordaDao.salvarTipoBorda(tpBorda);	
 	}
 	
-	public void selecionarTipoBorda(TipoBorda tipoBorda) {
-		TipoBordaDao tipoBordaDao = new TipoBordaDao();
+	public void selecionarTipoBorda(Borda tipoBorda) {
+		BordaDao tipoBordaDao = new BordaDao();
 		tipoBordaDao.selecionarTipoBorda(tipoBorda);		
 	}
 	
@@ -33,18 +33,18 @@ public class TipoBordaBo {
 //		tipoBordaDao.inserirTipoBorda(tipoBorda);	
 //	}
 	
-	public void editarTipoBorda(TipoBorda tpBorda) {
-		TipoBordaDao tpBordaDao = new TipoBordaDao();
+	public void editarTipoBorda(Borda tpBorda) {
+		BordaDao tpBordaDao = new BordaDao();
 		tpBordaDao.editarTipoBorda(tpBorda);
 	}
 	
 	public void deletarTipoBorda(int id) {
-		TipoBordaDao tpBordaDao = new TipoBordaDao();
+		BordaDao tpBordaDao = new BordaDao();
 		tpBordaDao.deletarTipoBorda(id);
 	}
 	
-	public List<TipoBorda> listarTipoBorda() {
-		TipoBordaDao tpBordaDao = new TipoBordaDao();
+	public List<Borda> listarTipoBorda() {
+		BordaDao tpBordaDao = new BordaDao();
 		return tpBordaDao.listarTipoBorda();
 	}		
 	

@@ -11,37 +11,38 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class Cadastro_Composicao extends JFrame {
+public class Cadastro_TipoUsuario extends JFrame {
 	
-	private JTextField txtNome;
-	public Cadastro_Composicao() {
-		setTitle("Manter Composicao");
+	private JTextField txtTipo;
+	public Cadastro_TipoUsuario() {
+		setTitle("Manter Borda");
 		getContentPane().setBackground(new Color(128, 128, 0));
 		getContentPane().setLayout(null);
 		
-		JLabel lblComposicao = new JLabel("Composição");
-		lblComposicao.setFont(new Font("Rockwell Condensed", Font.PLAIN, 50));
-		lblComposicao.setBounds(137, 23, 181, 96);
-		getContentPane().add(lblComposicao);
+		JLabel lblTipoUsuario = new JLabel("Tipo de Usuário");
+		lblTipoUsuario.setFont(new Font("Rockwell Condensed", Font.PLAIN, 50));
+		lblTipoUsuario.setBounds(113, 25, 257, 96);
+		getContentPane().add(lblTipoUsuario);
 		
-		JLabel lblNome = new JLabel("Nome");
-		lblNome.setBounds(20, 130, 46, 14);
-		getContentPane().add(lblNome);
+		JLabel lblTipo = new JLabel("Tipo");
+		lblTipo.setBounds(20, 130, 46, 14);
+		getContentPane().add(lblTipo);
 		
-		txtNome = new JTextField();
-		txtNome.setBounds(20, 155, 424, 20);
-		getContentPane().add(txtNome);
-		txtNome.setColumns(10);
+		txtTipo = new JTextField();
+		txtTipo.setBounds(20, 155, 424, 20);
+		getContentPane().add(txtTipo);
+		txtTipo.setColumns(10);
 		
 		JButton btnVoltar = new JButton("Voltar");
 		btnVoltar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Moedas_Adm moedas = new Moedas_Adm();
-				Cadastro_Composicao.this.dispose();
+				ConsultarAdm_Adm consultarAdm = new ConsultarAdm_Adm();
+				Cadastro_TipoUsuario.this.dispose();
 				
 			}
 		});
+		
 		btnVoltar.setBounds(10, 23, 83, 25);
 		getContentPane().add(btnVoltar);
 		
@@ -66,4 +67,10 @@ public class Cadastro_Composicao extends JFrame {
 		
 		this.setVisible(true);
 	}
+	
+	public static void main (String [ ]args) {
+		
+		Cadastro_TipoUsuario TipoUser = new Cadastro_TipoUsuario();
+	}
+	
 }

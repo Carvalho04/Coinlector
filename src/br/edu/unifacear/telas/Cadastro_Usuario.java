@@ -10,14 +10,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TelaCadastro extends JFrame {
+public class Cadastro_Usuario extends JFrame {
 	private JTextField txtNome;
 	private JTextField txtCpf;
 	private JTextField txtEmail;
 	private JTextField txtLogin;
 	private JTextField txtSenha;
 	
-	public TelaCadastro() {
+	public Cadastro_Usuario() {
 		setTitle("Cadastro");
 		getContentPane().setBackground(new Color(128, 128, 0));
 		getContentPane().setLayout(null);
@@ -77,8 +77,20 @@ public class TelaCadastro extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnCadastrar.setBounds(357, 206, 132, 23);
+		btnCadastrar.setBounds(286, 206, 110, 23);
 		getContentPane().add(btnCadastrar);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				TelaLogin login = new TelaLogin();
+				Cadastro_Usuario.this.dispose();
+				
+			}
+		});
+		btnVoltar.setBounds(414, 206, 110, 23);
+		getContentPane().add(btnVoltar);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(565, 330);
@@ -89,7 +101,7 @@ public class TelaCadastro extends JFrame {
 
 	public static void main (String []args) {
 		
-		TelaCadastro telaCadastro = new TelaCadastro();
+		Cadastro_Usuario telaCadastro = new Cadastro_Usuario();
 		
 	}
 }

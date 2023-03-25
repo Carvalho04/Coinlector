@@ -6,7 +6,7 @@ import br.edu.unifacear.classes.Distribuicao;
 import br.edu.unifacear.classes.Forma;
 import br.edu.unifacear.classes.Moeda;
 import br.edu.unifacear.classes.Pais;
-import br.edu.unifacear.classes.TipoBorda;
+import br.edu.unifacear.classes.Borda;
 
 public class Moeda_Teste {
 
@@ -21,7 +21,7 @@ public class Moeda_Teste {
 		Composicao composicao = new Composicao();
 		composicao.setId(9);
 		
-		TipoBorda tipoBorda = new TipoBorda();
+		Borda tipoBorda = new Borda();
 		tipoBorda.setId(6);
 		
 		Pais pais = new Pais();

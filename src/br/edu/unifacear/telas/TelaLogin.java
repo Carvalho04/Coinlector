@@ -42,6 +42,10 @@ public class TelaLogin extends JFrame{
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Menu_Usuario menu = new Menu_Usuario();
+				TelaLogin.this.dispose();
+		
 			}
 		});
 		btnEntrar.setBounds(57, 249, 134, 23);
@@ -50,6 +54,10 @@ public class TelaLogin extends JFrame{
 		JButton btnCadastro = new JButton("Cadastre-se");
 		btnCadastro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Cadastro_Usuario cadastro = new Cadastro_Usuario();
+				TelaLogin.this.dispose();
+				
 			}
 		});
 		btnCadastro.setBounds(154, 313, 119, 23);

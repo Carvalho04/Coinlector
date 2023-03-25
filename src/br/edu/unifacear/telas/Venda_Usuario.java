@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Venda_Usuario extends JFrame {
 	private JTextField txtItens;
@@ -31,26 +33,43 @@ public class Venda_Usuario extends JFrame {
 		btnPesquisar.setBounds(379, 110, 100, 23);
 		getContentPane().add(btnPesquisar);
 		
-		JLabel lblNewLabel_1 = new JLabel("Meus itens");
-		lblNewLabel_1.setBounds(10, 114, 51, 14);
-		getContentPane().add(lblNewLabel_1);
+		JLabel lblItens = new JLabel("Meus itens");
+		lblItens.setBounds(10, 114, 51, 14);
+		getContentPane().add(lblItens);
 		
 		table = new JTable();
 		table.setBounds(57, 142, 383, 363);
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Perfil_Usuario perfil = new Perfil_Usuario();
+				Venda_Usuario.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 		
-		JButton btnCatlogo = new JButton("Catálogo");
-		btnCatlogo.setBounds(390, 11, 89, 23);
-		getContentPane().add(btnCatlogo);
+		JButton btnCatalogo = new JButton("Catálogo");
+		btnCatalogo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Catalogo_Usuario catalogo = new Catalogo_Usuario();
+				Venda_Usuario.this.dispose();
+				
+			}
+		});
+		btnCatalogo.setBounds(390, 11, 89, 23);
+		getContentPane().add(btnCatalogo);
 	
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(505, 555);
 		this.setResizable(false);
+		this.setVisible(true);
 	}
 
 	

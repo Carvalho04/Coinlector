@@ -1,9 +1,11 @@
 package br.edu.unifacear.dao;
 
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.edu.unifacear.classes.TipoUsuario;
+import br.edu.unifacear.jdbc.Fabrica;
 
 public class TipoUsuarioDao {
 	
@@ -34,5 +36,6 @@ public class TipoUsuarioDao {
 			List<TipoUsuario> lista = new ArrayList<TipoUsuario>(); 
 			return lista;
 		}	
+		
 		
 }

@@ -2,6 +2,8 @@ package br.edu.unifacear.telas;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -32,6 +34,15 @@ public class Cadastro_Borda extends JFrame {
 		txtNome.setColumns(10);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Moedas_Adm moedas = new Moedas_Adm();
+				Cadastro_Borda.this.dispose();
+				
+			}
+		});
+		
 		btnVoltar.setBounds(10, 23, 83, 25);
 		getContentPane().add(btnVoltar);
 		

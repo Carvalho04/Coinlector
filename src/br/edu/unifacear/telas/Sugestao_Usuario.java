@@ -101,6 +101,14 @@ public class Sugestao_Usuario extends JFrame {
 			getContentPane().add(btnAdc);
 			
 			JButton btnVoltar = new JButton("Voltar");
+			btnVoltar.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					
+					Catalogo_Usuario Catalogo = new Catalogo_Usuario();
+					Sugestao_Usuario.this.dispose();
+					
+				}
+			});
 			btnVoltar.setBounds(10, 10, 83, 25);
 			getContentPane().add(btnVoltar);
 			
@@ -135,12 +143,13 @@ public class Sugestao_Usuario extends JFrame {
 			lblSituacao.setBounds(261, 376, 89, 14);
 			getContentPane().add(lblSituacao);
 			
-			JComboBox comboBox = new JComboBox();
-			comboBox.setBounds(261, 400, 200, 21);
-			comboBox.addItem("Aprovado");
-			comboBox.addItem("Reprovado");
-			comboBox.addItem("Em Análise");
-			getContentPane().add(comboBox);
+//			JComboBox comboBox = new JComboBox();
+//			comboBox.setBounds(261, 400, 200, 21);
+//			comboBox.addItem("Aprovado");
+//			comboBox.addItem("Reprovado");
+//			comboBox.addItem("Em Análise");
+//			getContentPane().add(comboBox);
+//			
 			
 			JLabel lblPais = new JLabel("Pais");
 			lblPais.setBounds(481, 147, 46, 14);

@@ -14,6 +14,21 @@ public UsuarioBo() {	}
 		if (usuario.getId() <= 0) {
 			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
 		}
+		if (usuario.getNome() == "") {
+			throw new Exception ("Nome deve estar preenchido");
+		}
+		if (usuario.getCpf() == "") {
+			throw new Exception ("CPF deve estar preenchido");
+		}
+		if (usuario.getEmail() == "") {
+			throw new Exception ("E-mail deve estar preenchido");
+		}
+		if (usuario.getLogin() == "") {
+			throw new Exception ("Login deve estar preenchido");
+		}
+		if (usuario.getSenha() == "") {
+			throw new Exception ("Senha deve estar preenchido");
+		}	
 		
 		UsuarioDao usuarioDao = new UsuarioDao();
 		usuarioDao.salvarUsuario(usuario);	

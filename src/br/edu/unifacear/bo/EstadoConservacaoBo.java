@@ -16,7 +16,7 @@ public EstadoConservacaoBo() {	}
 			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
 		}
 		if (estadoConservacao.getDescricao().equals("")) {
-			throw new Exception ("Descricao deve estar preenchido!");
+			throw new Exception ("Descrição deve estar preenchido!");
 		}
 		
 		EstadoConservacaoDao estadoConservacaoDao = new EstadoConservacaoDao();

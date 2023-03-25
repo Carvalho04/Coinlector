@@ -105,6 +105,14 @@ public class Moedas_Adm extends JFrame {
 			getContentPane().add(btnExcluir);
 			
 			JButton btnVoltar = new JButton("Voltar");
+			btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Catalogo_Adm catalogo = new Catalogo_Adm();
+				Moedas_Adm.this.dispose();
+				
+			}
+		});
 			btnVoltar.setBounds(10, 10, 83, 25);
 			getContentPane().add(btnVoltar);
 			
@@ -218,7 +226,8 @@ public class Moedas_Adm extends JFrame {
 			}
 			public void mousePressed(MouseEvent e) {
 				
-//				TelaCadastro tela = new TelaCadastro();
+				Cadastro_Borda borda = new Cadastro_Borda();
+				Moedas_Adm.this.dispose();
 			}
 			});
 			menuBar.add(itemBorda);
@@ -234,7 +243,8 @@ public class Moedas_Adm extends JFrame {
 			}
 			public void mousePressed(MouseEvent e) {
 				
-//				TelaCadastro tela = new TelaCadastro();
+				Cadastro_Distribuicao distribuicao = new Cadastro_Distribuicao();
+				Moedas_Adm.this.dispose();
 			}
 			});
 			menuBar.add(itemDistribuicao);
@@ -250,7 +260,8 @@ public class Moedas_Adm extends JFrame {
 			}
 			public void mousePressed(MouseEvent e) {
 				
-//				TelaCadastro tela = new TelaCadastro();
+				Cadastro_Forma forma = new Cadastro_Forma();
+				Moedas_Adm.this.dispose();
 			}
 			});
 			menuBar.add(itemForma);
@@ -266,7 +277,8 @@ public class Moedas_Adm extends JFrame {
 			}
 			public void mousePressed(MouseEvent e) {
 				
-//				TelaCadastro tela = new TelaCadastro();
+				Cadastro_Composicao composicao = new Cadastro_Composicao();
+				Moedas_Adm.this.dispose();
 			}
 			});
 			menuBar.add(itemComposicao);
@@ -282,7 +294,8 @@ public class Moedas_Adm extends JFrame {
 			}
 			public void mousePressed(MouseEvent e) {
 				
-//				TelaCadastro tela = new TelaCadastro();
+				Cadastro_Pais pais = new Cadastro_Pais();
+				Moedas_Adm.this.dispose();
 			}
 			});
 			menuBar.add(itemPais);

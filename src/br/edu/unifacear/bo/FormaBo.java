@@ -16,7 +16,7 @@ public class FormaBo {
 			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
 		}
 		if (forma.getDescricao().equals("")) {
-			throw new Exception ("Descricao deve estar preenchido!");
+			throw new Exception ("Descrição deve estar preenchido!");
 		}
 		
 		FormaDao formaDao = new FormaDao();

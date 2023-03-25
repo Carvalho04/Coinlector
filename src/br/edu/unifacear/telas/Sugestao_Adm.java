@@ -5,6 +5,9 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -26,6 +29,14 @@ public class Sugestao_Adm extends JFrame{
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Catalogo_Adm catalogo = new Catalogo_Adm();
+				Sugestao_Adm.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 	

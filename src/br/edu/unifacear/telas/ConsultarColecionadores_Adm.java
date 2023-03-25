@@ -43,6 +43,14 @@ public class ConsultarColecionadores_Adm extends JFrame{
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Menu_Adm menu = new Menu_Adm();
+				ConsultarColecionadores_Adm.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 		
@@ -50,6 +58,10 @@ public class ConsultarColecionadores_Adm extends JFrame{
 		btnCadastrar.setToolTipText("Adicionar novo colecionador");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+			Cadastro_Usuario usuario = new Cadastro_Usuario();
+			ConsultarColecionadores_Adm.this.dispose();
+				
 			}
 		});
 		btnCadastrar.setBounds(396, 11, 89, 23);

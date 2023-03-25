@@ -1,5 +1,6 @@
 package br.edu.unifacear.classes;
 
+import java.time.LocalDate;
 import java.util.*;
 
 public class Venda {
@@ -7,7 +8,7 @@ public class Venda {
 	//Attributes
 	
 	private int id;
-	private Date data;
+	private LocalDate data;
 	private Usuario usuarioComprador;
 	private Usuario usuarioVendedor;
 	
@@ -19,10 +20,10 @@ public class Venda {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(LocalDate data) {
 		this.data = data;
 	}
 	public Usuario getUsuraioComprador() {
@@ -47,7 +48,7 @@ public class Venda {
 		usuarioVendedor = new Usuario();
 	}
 	
-	public Venda(int id, Date data, Usuario usuarioComprador, Usuario usuarioVendedor) {
+	public Venda(int id, LocalDate data, Usuario usuarioComprador, Usuario usuarioVendedor) {
 		super();
 		this.id = id;
 		this.data = data;

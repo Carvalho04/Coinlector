@@ -44,6 +44,14 @@ public class ConsultarAdm_Adm extends JFrame{
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Menu_Adm menu = new Menu_Adm();
+				ConsultarAdm_Adm.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 		
@@ -51,14 +59,29 @@ public class ConsultarAdm_Adm extends JFrame{
 		btnCadastrar.setToolTipText("Adicionar novo administrador");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Cadastro_Adm cadastro_adm = new Cadastro_Adm();
+				ConsultarAdm_Adm.this.dispose();
+				
 			}
 		});
 		btnCadastrar.setBounds(396, 11, 89, 23);
 		getContentPane().add(btnCadastrar);
+		
+		JButton btnTipoUsu = new JButton("Novo Tipo de Usuário");
+		btnTipoUsu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Cadastro_TipoUsuario TipoUser = new Cadastro_TipoUsuario();
+				ConsultarAdm_Adm.this.dispose();
+			}
+		});
+		btnTipoUsu.setBounds(170, 517, 152, 23);
+		getContentPane().add(btnTipoUsu);
 	
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(505, 555);
+		this.setSize(505, 590);
 		this.setResizable(false);
 		this.setVisible(true);
 	}
@@ -69,5 +92,4 @@ public class ConsultarAdm_Adm extends JFrame{
 		
 		ConsultarAdm_Adm consultaAdm = new ConsultarAdm_Adm();
 	}
-	
 }

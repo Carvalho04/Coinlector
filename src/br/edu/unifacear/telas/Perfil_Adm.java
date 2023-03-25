@@ -1,6 +1,8 @@
 package br.edu.unifacear.telas;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
@@ -90,6 +92,14 @@ public class Perfil_Adm extends JFrame{
 		getContentPane().add(btnExcluir);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Menu_Adm menu = new Menu_Adm();
+				Perfil_Adm.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(192, 438, 89, 23);
 		getContentPane().add(btnVoltar);
 	

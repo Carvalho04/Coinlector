@@ -20,7 +20,7 @@ public class Moeda {
 	private Forma forma;
 	private Distribuicao distribuicao;
 	private Composicao composicao;
-	private TipoBorda tipoborda;
+	private Borda tipoborda;
 	private Pais pais;
 	
 	
@@ -104,10 +104,10 @@ public class Moeda {
 	public void setComposicao(Composicao composicao) {
 		this.composicao = composicao;
 	}
-	public TipoBorda getTipoborda() {
+	public Borda getTipoborda() {
 		return tipoborda;
 	}
-	public void setTipoborda(TipoBorda tipoborda) {
+	public void setTipoborda(Borda tipoborda) {
 		this.tipoborda = tipoborda;
 	}
 	public Pais getPais() {
@@ -124,13 +124,13 @@ public class Moeda {
 		forma = new Forma();
 		distribuicao = new Distribuicao();
 		composicao = new Composicao();
-		tipoborda = new TipoBorda();
+		tipoborda = new Borda();
 		pais = new Pais();
 	}
 	
 	public Moeda(int id, String nome, String descricao, String cunhagem, double peso, double diametro,
 			double circunferencia, double espessura, int valor_face, int ano, Forma forma, 
-			Distribuicao distribuicao, Composicao composicao, TipoBorda tipoborda, Pais pais) {
+			Distribuicao distribuicao, Composicao composicao, Borda tipoborda, Pais pais) {
 		
 		super();
 		this.id = id;

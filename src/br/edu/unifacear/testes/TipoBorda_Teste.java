@@ -1,18 +1,18 @@
 package br.edu.unifacear.testes;
 
-import br.edu.unifacear.bo.TipoBordaBo;
-import br.edu.unifacear.classes.TipoBorda;
+import br.edu.unifacear.bo.BordaBo;
+import br.edu.unifacear.classes.Borda;
 
 public class TipoBorda_Teste {
 
 	public static void main (String []args) {
 		
-		TipoBorda tpBorda = new TipoBorda();
+		Borda tpBorda = new Borda();
 		
 		tpBorda.setId(7);
 		tpBorda.setDescricao("Serrilhada");
 		
-		TipoBordaBo tpBordaBo = new TipoBordaBo();
+		BordaBo tpBordaBo = new BordaBo();
 		try {
 			tpBordaBo.salvarTipoBorda(tpBorda);
 			System.out.println("OK");

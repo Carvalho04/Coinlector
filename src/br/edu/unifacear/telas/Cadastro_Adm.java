@@ -79,7 +79,7 @@ public class Cadastro_Adm extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnCadastrar.setBounds(214, 257, 132, 23);
+		btnCadastrar.setBounds(132, 257, 132, 23);
 		getContentPane().add(btnCadastrar);
 		
 		JLabel lblCargo = new JLabel("Cargo");
@@ -90,6 +90,20 @@ public class Cadastro_Adm extends JFrame{
 		textField.setColumns(10);
 		textField.setBounds(331, 204, 193, 20);
 		getContentPane().add(textField);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				ConsultarAdm_Adm consultar = new ConsultarAdm_Adm();
+				Cadastro_Adm.this.dispose();
+				
+			}
+		});
+		
+		
+		btnVoltar.setBounds(306, 257, 132, 23);
+		getContentPane().add(btnVoltar);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(565, 330);

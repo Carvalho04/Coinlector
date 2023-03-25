@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Compras_Usuario extends JFrame {
 	private JTextField txtCompras;
@@ -40,17 +42,34 @@ public class Compras_Usuario extends JFrame {
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Perfil_Usuario perfil = new Perfil_Usuario();
+				Compras_Usuario.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 		
-		JButton btnCatlogo = new JButton("Catálogo");
-		btnCatlogo.setBounds(390, 11, 89, 23);
-		getContentPane().add(btnCatlogo);
+		JButton btnCatalogo = new JButton("Catálogo");
+		btnCatalogo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Catalogo_Usuario catalogo = new Catalogo_Usuario();
+				Compras_Usuario.this.dispose();
+				
+			}
+		});
+		btnCatalogo.setBounds(390, 11, 89, 23);
+		getContentPane().add(btnCatalogo);
 	
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(505, 555);
 		this.setResizable(false);
+		this.setVisible(true);
 	}
 
 	

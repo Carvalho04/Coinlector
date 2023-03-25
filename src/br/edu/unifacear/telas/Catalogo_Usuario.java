@@ -42,6 +42,14 @@ public class Catalogo_Usuario extends JFrame{
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Menu_Usuario menu = new Menu_Usuario();
+				Catalogo_Usuario.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 		
@@ -49,6 +57,9 @@ public class Catalogo_Usuario extends JFrame{
 		btnSugestão.setToolTipText("Sugerir nova adição de moeda");
 		btnSugestão.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Sugestao_Usuario sugestao = new Sugestao_Usuario();
+				Catalogo_Usuario.this.dispose();
 			}
 		});
 		btnSugestão.setBounds(428, 11, 51, 23);

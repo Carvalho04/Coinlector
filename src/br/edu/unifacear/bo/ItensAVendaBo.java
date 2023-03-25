@@ -15,6 +15,16 @@ public class ItensAVendaBo {
 		if (itensAVenda.getId() <= 0) {
 			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
 		}
+		if (itensAVenda.getQuantidade() <= 0) {
+			throw new Exception ("Quantidade deve ser superior a zero (0)");
+		}
+		if (itensAVenda.getValor() <= 0.0) {
+			throw new Exception ("Valor deve ser superior a (0)");
+		}
+		if (itensAVenda.getTotal() <= 0) {
+			throw new Exception ("Total deve ser superior a zero (0)");
+		}
+		
 		
 		ItensAVendaDao itensAVendaDao = new ItensAVendaDao();
 		itensAVendaDao.salvarItensAVenda(itensAVenda);	

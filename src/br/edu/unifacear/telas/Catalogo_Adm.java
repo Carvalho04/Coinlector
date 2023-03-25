@@ -44,6 +44,14 @@ public class Catalogo_Adm extends JFrame{
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				Menu_Adm menu = new Menu_Adm();
+				Catalogo_Adm.this.dispose();
+				
+			}
+		});
 		btnVoltar.setBounds(10, 11, 89, 23);
 		getContentPane().add(btnVoltar);
 		
@@ -51,12 +59,24 @@ public class Catalogo_Adm extends JFrame{
 		btnSugestão.setToolTipText("Consultar sugestões de moedas");
 		btnSugestão.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				Sugestao_Adm sugestao = new Sugestao_Adm();
+				Catalogo_Adm.this.dispose();
+				
 			}
 		});
 		btnSugestão.setBounds(428, 11, 51, 23);
 		getContentPane().add(btnSugestão);
 		
 		JButton btnMoedas = new JButton("Moedas");
+		btnMoedas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				Moedas_Adm moedas = new Moedas_Adm();
+				Catalogo_Adm.this.dispose();
+				
+			}
+		});
 		btnMoedas.setBounds(203, 11, 89, 23);
 		getContentPane().add(btnMoedas);
 	
