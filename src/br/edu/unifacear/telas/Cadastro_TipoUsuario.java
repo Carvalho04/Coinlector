@@ -11,6 +11,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.edu.unifacear.bo.PaisBo;
+import br.edu.unifacear.bo.TipoUsuarioBo;
+import br.edu.unifacear.classes.Pais;
+import br.edu.unifacear.classes.TipoUsuario;
+
 public class Cadastro_TipoUsuario extends JFrame {
 	
 	private JTextField txtTipo;
@@ -47,6 +52,26 @@ public class Cadastro_TipoUsuario extends JFrame {
 		getContentPane().add(btnVoltar);
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				TipoUsuario tpUser = new TipoUsuario();
+				tpUser.setTipo(txtTipo.getText());
+				
+				try {
+				TipoUsuarioBo tipoUsuarioBo = new TipoUsuarioBo();
+				tipoUsuarioBo.salvarTipoUsuario(tpUser);
+				ConsultarAdm_Adm consultarAdm = new ConsultarAdm_Adm();
+				Cadastro_TipoUsuario.this.dispose();
+				}catch (Exception eE) {
+					System.out.println("Erro ao salvar pais \n" + eE.getMessage());
+				}
+			}
+		});
+				
+				
+			
 		btnSalvar.setBounds(196, 217, 83, 25);
 		getContentPane().add(btnSalvar);
 		

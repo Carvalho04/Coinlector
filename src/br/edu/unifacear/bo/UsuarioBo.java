@@ -11,9 +11,9 @@ public UsuarioBo() {	}
 	
 	public void salvarUsuario(Usuario usuario) throws Exception {
 
-		if (usuario.getId() <= 0) {
-			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
-		}
+//		if (usuario.getId() <= 0) {
+//			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
+//		}
 		if (usuario.getNome() == "") {
 			throw new Exception ("Nome deve estar preenchido");
 		}

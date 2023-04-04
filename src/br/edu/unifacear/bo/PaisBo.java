@@ -1,5 +1,6 @@
 package br.edu.unifacear.bo;
 
+import java.sql.SQLException;
 import java.util.*;
 
 import br.edu.unifacear.classes.Pais;
@@ -11,14 +12,14 @@ public class PaisBo {
 
 	public void salvarPais(Pais pais) throws Exception{
 		
-		if (pais.getId() <= 0) {
-			throw new Exception("Id não pode ser igual ou menor que zero(0)");
-		} 
+//		if (pais.getId() <= 0) {
+//			throw new Exception("Id não pode ser igual ou menor que zero(0)");
+//		} 
 		if (pais.getNome().equals("")) {
 			throw new Exception ("Nome deve estar preenchido");
 		}
 		if (pais.getContinente().equals("")) {
-			throw new Exception ("Continente deve estar preenchido");
+			throw new Exception ("Continente deve estar selecionado");
 		}
 		
 		System.out.println("Validações do Pais - OK");
@@ -29,7 +30,11 @@ public class PaisBo {
 	
 	public void selecionarPais(Pais pais) {
 		PaisDao paisDao = new PaisDao();
-		paisDao.selecionarPais(pais);		
+		try {
+			paisDao.selecionarPais(pais);
+		} catch (SQLException e) {
+			e.getMessage();
+		}		
 	}
 	
 //	public void inserirPais(Pais pais) {

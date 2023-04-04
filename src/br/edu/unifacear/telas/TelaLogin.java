@@ -1,13 +1,27 @@
 package br.edu.unifacear.telas;
 
 import javax.swing.*;
+
+import br.edu.unifacear.jdbc.Fabrica;
+
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
+import java.io.Reader;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class TelaLogin extends JFrame{
+	
+	public String acesso;
+	private JTextField txtLogin;
+	private JPasswordField txtSenha;
+	
+	
 	public TelaLogin() {
 		setTitle("Coinlector");
 		
@@ -42,12 +56,11 @@ public class TelaLogin extends JFrame{
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				Menu_Usuario menu = new Menu_Usuario();
-				TelaLogin.this.dispose();
-		
-			}
+
+			    }   
+							
 		});
+				
 		btnEntrar.setBounds(57, 249, 134, 23);
 		jpn.add(btnEntrar);
 		
@@ -82,12 +95,12 @@ public class TelaLogin extends JFrame{
 		
 		
 	}
-
-	private JTextField txtLogin;
-	private JPasswordField txtSenha;
 	
 	public static void main (String []args) {
 	
 	TelaLogin telaLogin = new TelaLogin();
 }
+	
+	
+	
 }

@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.edu.unifacear.bo.ComposicaoBo;
+import br.edu.unifacear.classes.Composicao;
+
 public class Cadastro_Composicao extends JFrame {
 	
 	private JTextField txtNome;
@@ -46,6 +49,23 @@ public class Cadastro_Composicao extends JFrame {
 		getContentPane().add(btnVoltar);
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				Composicao composicao = new Composicao();
+				composicao.setDescricao(txtNome.getText());
+				ComposicaoBo composicaoBo = new ComposicaoBo();
+				try {
+				composicaoBo.salvarComposicao(composicao);
+				Moedas_Adm moedas = new Moedas_Adm();
+				Cadastro_Composicao.this.dispose();
+				}catch (Exception eE) {
+					System.out.println("Erro ao salvar composicao \n" + eE.getMessage());
+				}
+			
+			}
+		});
 		btnSalvar.setBounds(196, 217, 83, 25);
 		getContentPane().add(btnSalvar);
 		
@@ -66,4 +86,11 @@ public class Cadastro_Composicao extends JFrame {
 		
 		this.setVisible(true);
 	}
+	
+	public static void main(String []agrs) {
+		
+		Cadastro_Composicao composicao = new Cadastro_Composicao();
+		
+	}
+	
 }

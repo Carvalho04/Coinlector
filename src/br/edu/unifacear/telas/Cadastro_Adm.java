@@ -18,6 +18,7 @@ public class Cadastro_Adm extends JFrame{
 	private JTextField txtLogin;
 	private JTextField txtSenha;
 	private JTextField textField;
+	private JTextField txtId;
 	
 	public Cadastro_Adm() {
 		setTitle("Cadastro");
@@ -79,7 +80,7 @@ public class Cadastro_Adm extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnCadastrar.setBounds(132, 257, 132, 23);
+		btnCadastrar.setBounds(225, 249, 132, 23);
 		getContentPane().add(btnCadastrar);
 		
 		JLabel lblCargo = new JLabel("Cargo");
@@ -102,11 +103,21 @@ public class Cadastro_Adm extends JFrame{
 		});
 		
 		
-		btnVoltar.setBounds(306, 257, 132, 23);
+		btnVoltar.setBounds(392, 249, 132, 23);
 		getContentPane().add(btnVoltar);
 		
+		txtId = new JTextField();
+		txtId.setEditable(false);
+		txtId.setColumns(10);
+		txtId.setBounds(83, 250, 112, 20);
+		getContentPane().add(txtId);
+		
+		JLabel lblId = new JLabel("Id");
+		lblId.setBounds(43, 253, 46, 14);
+		getContentPane().add(lblId);
+		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(565, 330);
+		this.setSize(565, 360);
 		this.setResizable(false);		
 		this.setVisible(true);	
 		

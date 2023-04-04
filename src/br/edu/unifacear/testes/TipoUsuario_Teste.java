@@ -10,7 +10,7 @@ public class TipoUsuario_Teste {
 		TipoUsuario tpUsuario = new TipoUsuario ();
 		
 		tpUsuario.setId(1);
-		tpUsuario.setDescricao("Adm");
+		tpUsuario.setTipo("Adm");
 		
 		TipoUsuarioBo tpUsuarioBo = new TipoUsuarioBo();
 		try {

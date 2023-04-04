@@ -11,6 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.edu.unifacear.bo.BordaBo;
+import br.edu.unifacear.classes.Borda;
+
 public class Cadastro_Borda extends JFrame {
 	
 	private JTextField txtNome;
@@ -47,6 +50,23 @@ public class Cadastro_Borda extends JFrame {
 		getContentPane().add(btnVoltar);
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				Borda borda = new Borda();
+				borda.setDescricao(txtNome.getText());
+				BordaBo bordaBo = new BordaBo();
+				try {
+				bordaBo.salvarBorda(borda);
+				Moedas_Adm moedas = new Moedas_Adm();
+				Cadastro_Borda.this.dispose();
+				}catch (Exception eE) {
+					System.out.println("Erro ao salvar borda \n" + eE.getMessage());
+				}
+			
+			}
+		});
 		btnSalvar.setBounds(196, 217, 83, 25);
 		getContentPane().add(btnSalvar);
 		
@@ -67,4 +87,9 @@ public class Cadastro_Borda extends JFrame {
 		
 		this.setVisible(true);
 	}
+	
+	public static void main(String []agrs) {
+			Cadastro_Borda borda = new Cadastro_Borda();
+	}
+	
 }

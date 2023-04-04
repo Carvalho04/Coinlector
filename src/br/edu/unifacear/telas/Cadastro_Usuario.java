@@ -6,6 +6,13 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JTextField;
+
+import br.edu.unifacear.bo.PaisBo;
+import br.edu.unifacear.bo.UsuarioBo;
+import br.edu.unifacear.classes.Pais;
+import br.edu.unifacear.classes.TipoUsuario;
+import br.edu.unifacear.classes.Usuario;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -75,8 +82,26 @@ public class Cadastro_Usuario extends JFrame {
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				TipoUsuario tipo = new TipoUsuario();
+				tipo.setId(2);
+				Usuario usuario = new Usuario();
+				usuario.setNome(txtNome.getText());
+				usuario.setCpf(txtCpf.getText());
+				usuario.setEmail(txtEmail.getText());
+				usuario.setLogin(txtLogin.getText());
+				usuario.setSenha(txtSenha.getText());
+				usuario.setTipoUsuario(tipo);
+				UsuarioBo userBo = new UsuarioBo();
+				try {
+				userBo.salvarUsuario(usuario);
+				TelaLogin login = new TelaLogin();
+				Cadastro_Usuario.this.dispose();
+				}catch (Exception eE) {
+					System.out.println("Erro ao salvar pais \n" + eE.getMessage());
+				}
 			}
 		});
+				
 		btnCadastrar.setBounds(286, 206, 110, 23);
 		getContentPane().add(btnCadastrar);
 		

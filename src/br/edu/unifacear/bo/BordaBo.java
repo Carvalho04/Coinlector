@@ -1,5 +1,6 @@
 package br.edu.unifacear.bo;
 
+import java.sql.SQLException;
 import java.util.*;
 import br.edu.unifacear.classes.Borda;
 import br.edu.unifacear.dao.BordaDao;
@@ -8,44 +9,49 @@ public class BordaBo {
 	
 	public BordaBo () { 	}
 
-	public void salvarTipoBorda(Borda tpBorda) throws Exception {
+	public void salvarBorda(Borda Borda) throws Exception {
 		
-		if (tpBorda.getId() <= 0) {
-			throw new Exception ("Id não pode ser igual ou menor que zero(0)");
-		}
-		if (tpBorda.getDescricao().equals("")) {
+//		if (Borda.getId() <= 0) {
+//			throw new Exception ("Id não pode ser igual ou menor que zero(0)");
+//		}
+		if (Borda.getDescricao().equals("")) {
 			throw new Exception ("Descrição deve estar preenchido!");
 		}
 		
-		System.out.println("Validações de Tipo Borda - OK");
+		System.out.println("Validações de  Borda - OK");
 		
-		BordaDao tpBordaDao = new BordaDao();
-		tpBordaDao.salvarTipoBorda(tpBorda);	
+		BordaDao BordaDao = new BordaDao();
+		BordaDao.salvarBorda(Borda);	
+		
 	}
 	
-	public void selecionarTipoBorda(Borda tipoBorda) {
-		BordaDao tipoBordaDao = new BordaDao();
-		tipoBordaDao.selecionarTipoBorda(tipoBorda);		
+	public void selecionarBorda(Borda Borda) {
+		BordaDao BordaDao = new BordaDao();
+		try {
+			BordaDao.selecionarBorda(Borda);
+		} catch (SQLException e) {
+			e.getMessage();
+		}		
 	}
 	
-//	public void inserirTipoBorda(TipoBorda tipoBorda) {
-//		TipoBordaDao tipoBordaDao = new TipoBordaDao();
-//		tipoBordaDao.inserirTipoBorda(tipoBorda);	
+//	public void inserirBorda(Borda Borda) {
+//		BordaDao BordaDao = new BordaDao();
+//		BordaDao.inserirBorda(Borda);	
 //	}
 	
-	public void editarTipoBorda(Borda tpBorda) {
-		BordaDao tpBordaDao = new BordaDao();
-		tpBordaDao.editarTipoBorda(tpBorda);
+	public void editarBorda(Borda Borda) {
+		BordaDao BordaDao = new BordaDao();
+		BordaDao.editarBorda(Borda);
 	}
 	
-	public void deletarTipoBorda(int id) {
-		BordaDao tpBordaDao = new BordaDao();
-		tpBordaDao.deletarTipoBorda(id);
+	public void deletarBorda(int id) {
+		BordaDao BordaDao = new BordaDao();
+		BordaDao.deletarBorda(id);
 	}
 	
-	public List<Borda> listarTipoBorda() {
-		BordaDao tpBordaDao = new BordaDao();
-		return tpBordaDao.listarTipoBorda();
+	public List<Borda> listarBorda() {
+		BordaDao BordaDao = new BordaDao();
+		return BordaDao.listarBorda();
 	}		
 	
 	

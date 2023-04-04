@@ -11,9 +11,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.edu.unifacear.bo.DistribuicaoBo;
+import br.edu.unifacear.classes.Distribuicao;
+
 public class Cadastro_Distribuicao extends JFrame {
 	
 	private JTextField txtNome;
+	private JTextField txtId;
 	public Cadastro_Distribuicao() {
 		setTitle("Manter Distribuicao");
 		getContentPane().setBackground(new Color(128, 128, 0));
@@ -29,7 +33,7 @@ public class Cadastro_Distribuicao extends JFrame {
 		getContentPane().add(lblNome);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(20, 155, 424, 20);
+		txtNome.setBounds(20, 155, 365, 20);
 		getContentPane().add(txtNome);
 		txtNome.setColumns(10);
 		
@@ -46,6 +50,23 @@ public class Cadastro_Distribuicao extends JFrame {
 		getContentPane().add(btnVoltar);
 		
 		JButton btnSalvar = new JButton("Salvar");
+		btnSalvar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				Distribuicao distribuicao = new Distribuicao();
+				distribuicao.setDescricao(txtNome.getText());
+				DistribuicaoBo distribuicaoBo = new DistribuicaoBo();
+				try {
+				distribuicaoBo.salvarDistribuicao(distribuicao);
+				Moedas_Adm moedas = new Moedas_Adm();
+				Cadastro_Distribuicao.this.dispose();
+				}catch (Exception eE) {
+					System.out.println("Erro ao salvar distribuicao \n" + eE.getMessage());
+				}
+			
+			}
+		});
 		btnSalvar.setBounds(196, 217, 83, 25);
 		getContentPane().add(btnSalvar);
 		
@@ -56,6 +77,16 @@ public class Cadastro_Distribuicao extends JFrame {
 		JButton btnExcluir = new JButton("Excluir");
 		btnExcluir.setBounds(361, 218, 83, 25);
 		getContentPane().add(btnExcluir);
+		
+		txtId = new JTextField();
+		txtId.setEditable(false);
+		txtId.setColumns(10);
+		txtId.setBounds(413, 155, 41, 20);
+		getContentPane().add(txtId);
+		
+		JLabel lblId = new JLabel("Id");
+		lblId.setBounds(413, 130, 46, 14);
+		getContentPane().add(lblId);
 	
 	
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,4 +97,12 @@ public class Cadastro_Distribuicao extends JFrame {
 		
 		this.setVisible(true);
 	}
+	
+	public static void main(String []agrs) {
+		
+		Cadastro_Distribuicao distribuicao = new Cadastro_Distribuicao();
+		
+	}
+	
+	
 }

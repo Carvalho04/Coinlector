@@ -1,5 +1,6 @@
 package br.edu.unifacear.bo;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.edu.unifacear.classes.Forma;
@@ -12,12 +13,14 @@ public class FormaBo {
 	
 	public void salvarForma(Forma forma) throws Exception {
 
-		if (forma.getId() <= 0) {
-			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
-		}
+//		if (forma.getId() <= 0) {
+//			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
+//		}
 		if (forma.getDescricao().equals("")) {
 			throw new Exception ("Descrição deve estar preenchido!");
 		}
+		
+		System.out.println("Validaçẽos de Forma - OK");
 		
 		FormaDao formaDao = new FormaDao();
 		formaDao.salvarForma(forma);	
@@ -25,7 +28,12 @@ public class FormaBo {
 	
 	public void selecionarForma(Forma forma) {
 		FormaDao formaDao = new FormaDao();
-		formaDao.selecionarForma(forma);		
+		try {
+			formaDao.selecionarForma(forma);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 	
 //	public void inserirForma(Forma forma) {

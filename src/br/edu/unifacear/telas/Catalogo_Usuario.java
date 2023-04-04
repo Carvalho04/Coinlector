@@ -10,10 +10,12 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
 
 public class Catalogo_Usuario extends JFrame{
-	private JTextField txtCompras;
 	private JTable table;
+	private JTextField txtAno;
+	private JTextField textField;
 	public Catalogo_Usuario() {
 		setTitle("Catálogo");
 		getContentPane().setBackground(new Color(128, 128, 0));
@@ -24,21 +26,19 @@ public class Catalogo_Usuario extends JFrame{
 		lblCatalogo.setBounds(183, 11, 134, 99);
 		getContentPane().add(lblCatalogo);
 		
-		txtCompras = new JTextField();
-		txtCompras.setBounds(71, 111, 298, 20);
-		getContentPane().add(txtCompras);
-		txtCompras.setColumns(10);
-		
 		JButton btnPesquisar = new JButton("Pesquisar");
-		btnPesquisar.setBounds(379, 110, 100, 23);
+		btnPesquisar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+			}
+		});
+		btnPesquisar.setBounds(183, 493, 134, 23);
 		getContentPane().add(btnPesquisar);
 		
-		JLabel lblMoedas = new JLabel("Moedas");
-		lblMoedas.setBounds(10, 114, 51, 14);
-		getContentPane().add(lblMoedas);
-		
 		table = new JTable();
-		table.setBounds(57, 142, 383, 363);
+		table.setBounds(57, 166, 383, 304);
 		getContentPane().add(table);
 		
 		JButton btnVoltar = new JButton("Voltar");
@@ -64,6 +64,32 @@ public class Catalogo_Usuario extends JFrame{
 		});
 		btnSugestão.setBounds(428, 11, 51, 23);
 		getContentPane().add(btnSugestão);
+		
+		JLabel lblBorda = new JLabel("Borda");
+		lblBorda.setBounds(57, 114, 46, 14);
+		getContentPane().add(lblBorda);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setBounds(57, 133, 120, 22);
+		getContentPane().add(comboBox);
+		
+		JLabel lblAno = new JLabel("Ano Inicio");
+		lblAno.setBounds(183, 114, 72, 14);
+		getContentPane().add(lblAno);
+		
+		JLabel lblAnoFinal = new JLabel("Ano Final");
+		lblAnoFinal.setBounds(315, 114, 72, 14);
+		getContentPane().add(lblAnoFinal);
+		
+		txtAno = new JTextField();
+		txtAno.setBounds(183, 134, 125, 20);
+		getContentPane().add(txtAno);
+		txtAno.setColumns(10);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(315, 134, 125, 20);
+		getContentPane().add(textField);
 	
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

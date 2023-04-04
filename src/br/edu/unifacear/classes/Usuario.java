@@ -1,5 +1,6 @@
 package br.edu.unifacear.classes;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Usuario {
@@ -104,5 +105,7 @@ public class Usuario {
 		return "Usuário [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", login=" + login + ", senha=" + senha + ", tipo usuario=" + tipoUsuario.getId() +"]";
 		
 	}
+	
+	
 	
 }

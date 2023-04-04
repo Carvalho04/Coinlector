@@ -1,5 +1,6 @@
 package br.edu.unifacear.bo;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.edu.unifacear.classes.TipoUsuario;
@@ -11,11 +12,11 @@ public class TipoUsuarioBo {
 
 	public void salvarTipoUsuario(TipoUsuario tpUsuario) throws Exception {
 		
-		if (tpUsuario.getId() <= 0) {
-			throw new Exception ("Id não pode ser igual ou menor que zero(0)");
-		}
-		if (tpUsuario.getDescricao().equals("")) {
-			throw new Exception ("Descrição deve estar preenchido!");
+//		if (tpUsuario.getId() <= 0) {
+//			throw new Exception ("Id não pode ser igual ou menor que zero(0)");
+//		}
+		if (tpUsuario.getTipo().equals("")) {
+			throw new Exception ("Tipo deve estar preenchido!");
 		}
 		
 		System.out.println("Validações de Tipo Borda - OK");
@@ -26,7 +27,12 @@ public class TipoUsuarioBo {
 	
 	public void selecionarTipoUsuario(TipoUsuario tipoUsuario) {
 		TipoUsuarioDao tipoUsuarioDao = new TipoUsuarioDao();
-		tipoUsuarioDao.selecionarTipoUsuario(tipoUsuario);		
+		try {
+			tipoUsuarioDao.selecionarTipoUsuario(tipoUsuario);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 	
 //	public void inserirTipoUsuario(TipoUsuario tipoUsuario) {

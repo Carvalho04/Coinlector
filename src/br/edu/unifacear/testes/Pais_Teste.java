@@ -9,10 +9,10 @@ public class Pais_Teste {
 		
 		Pais pais = new Pais();
 		
-		pais.setId(9);
-		pais.setNome("Brasil");
-		pais.setContinente("America do Sul");
-		
+//		pais.setId(9);
+//		pais.setNome("Brasil");
+//		pais.setContinente("America do Sul");
+
 		PaisBo paisbo = new PaisBo();
 		try {
 			paisbo.salvarPais(pais);

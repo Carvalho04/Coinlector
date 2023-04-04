@@ -63,7 +63,7 @@ public class Borda {
 	
 	@Override
 	public String toString() {
-		return "TipoBorda [id=" + id + ", descricao=" + descricao + "]";
+		return "Borda [id=" + id + ", descricao=" + descricao + "]";
 	}
 
 }

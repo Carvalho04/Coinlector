@@ -15,7 +15,7 @@ public class Teste {
 		Connection conexao;
 		try {
 			conexao = DriverManager.getConnection(
-					"jdbc:mysql://localhost/Coinlector", "root", "admin");
+					"jdbc:mysql://127.0.0.1/Coinlector?autoReconnect=true&useSSL=false", "root", "admin");
 			
 			System.out.println("Conectado ao BD");
 			conexao.close();

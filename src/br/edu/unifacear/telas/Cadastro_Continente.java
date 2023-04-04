@@ -6,26 +6,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import br.edu.unifacear.bo.FormaBo;
-import br.edu.unifacear.classes.Forma;
+import br.edu.unifacear.bo.ContinenteBo;
+import br.edu.unifacear.classes.Continente;
 
-public class Cadastro_Forma extends JFrame {
+public class Cadastro_Continente extends JFrame{
 	
 	private JTextField txtNome;
-	public Cadastro_Forma() {
-		setTitle("Manter Forma");
+	public Cadastro_Continente() {
+		setTitle("Manter Continente");
 		getContentPane().setBackground(new Color(128, 128, 0));
 		getContentPane().setLayout(null);
 		
-		JLabel lblForma = new JLabel("Forma");
-		lblForma.setFont(new Font("Rockwell Condensed", Font.PLAIN, 50));
-		lblForma.setBounds(184, 23, 100, 96);
-		getContentPane().add(lblForma);
+		JLabel lblContinente = new JLabel("Continente");
+		lblContinente.setFont(new Font("Rockwell Condensed", Font.PLAIN, 50));
+		lblContinente.setBounds(141, 23, 165, 96);
+		getContentPane().add(lblContinente);
 		
 		JLabel lblNome = new JLabel("Nome");
 		lblNome.setBounds(20, 130, 46, 14);
@@ -41,10 +40,11 @@ public class Cadastro_Forma extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				Moedas_Adm moedas = new Moedas_Adm();
-				Cadastro_Forma.this.dispose();
+				Cadastro_Continente.this.dispose();
 				
 			}
 		});
+		
 		btnVoltar.setBounds(10, 23, 83, 25);
 		getContentPane().add(btnVoltar);
 		
@@ -53,15 +53,15 @@ public class Cadastro_Forma extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				
 				
-				Forma forma = new Forma();
-				forma.setDescricao(txtNome.getText());
-				FormaBo formaBo = new FormaBo();
+				Continente continente = new Continente();
+				continente.setDescricao(txtNome.getText());
+				ContinenteBo continenteBo = new ContinenteBo();
 				try {
-				formaBo.salvarForma(forma);
+				continenteBo.salvarContinente(continente);
 				Moedas_Adm moedas = new Moedas_Adm();
-				Cadastro_Forma.this.dispose();
+				Cadastro_Continente.this.dispose();
 				}catch (Exception eE) {
-					System.out.println("Erro ao salvar forma \n" + eE.getMessage());
+					System.out.println("Erro ao salvar continente \n" + eE.getMessage());
 				}
 			
 			}
@@ -87,10 +87,10 @@ public class Cadastro_Forma extends JFrame {
 		this.setVisible(true);
 	}
 	
-	public static void main (String []args) {
+	public static void main(String []agrs) {
 		
-		Cadastro_Forma forma = new Cadastro_Forma();
+		Cadastro_Continente continente = new Cadastro_Continente();
 		
 	}
-	
+
 }

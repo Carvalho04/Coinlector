@@ -11,9 +11,9 @@ public class MoedaBo {
 	
 	public void salvarMoeda(Moeda moeda) throws Exception {
 
-		if (moeda.getId() <= 0) {
-			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
-		}
+//		if (moeda.getId() <= 0) {
+//			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
+//		}
 		if (moeda.getNome() == "") {
 			throw new Exception ("Nome deve estar preenchido");
 		}

@@ -8,7 +8,7 @@ public class TipoUsuario {
 	//Attributes
 	
 	private int id;
-	private String descricao;
+	private String tipo;
 	
 	
 	//Properties
@@ -19,11 +19,11 @@ public class TipoUsuario {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getDescricao() {
-		return descricao;
+	public String getTipo() {
+		return tipo;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 		
 	
@@ -33,10 +33,10 @@ public class TipoUsuario {
 		super();
 	}
 	
-	public TipoUsuario(int id, String descricao) {
+	public TipoUsuario(int id, String tipo) {
 		super();
 		this.id = id;
-		this.descricao = descricao;
+		this.tipo = tipo;
 	}
 		
 	
@@ -44,7 +44,7 @@ public class TipoUsuario {
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(descricao, id);
+		return Objects.hash(tipo, id);
 	}
 	
 	@Override
@@ -56,13 +56,13 @@ public class TipoUsuario {
 		if (getClass() != obj.getClass())
 			return false;
 		TipoUsuario other = (TipoUsuario) obj;
-		return Objects.equals(descricao, other.descricao) && id == other.id;
+		return Objects.equals(tipo, other.tipo) && id == other.id;
 	}
 	
 	
 	@Override
 	public String toString() {
-		return "TipoUsuario [id=" + id + ", descricao=" + descricao + "]";
+		return "TipoUsuario [id=" + id + ", tipo=" + tipo + "]";
 	}
 
 	

@@ -25,13 +25,8 @@ public class Sugestao_Usuario extends JFrame {
 		private JTextField txtDiametro;
 		private JTextField txtEspessura;
 		private JTextField txtFimProd;
-		private JTextField txtCircunferencia;
 		private JTextField txtValorFace;
-		private JTextField txtPais;
-		private JTextField txtBorda;
-		private JTextField txtForma;
-		private JTextField txtDistribuicao;
-		private JTextField txtComposicao;
+		private JTextField txtCircunferencia;
 		public Sugestao_Usuario() {
 			setTitle("Sugerir Moeda");
 			getContentPane().setBackground(new Color(128, 128, 0));
@@ -125,11 +120,6 @@ public class Sugestao_Usuario extends JFrame {
 			lblCircunferencia.setBounds(261, 315, 89, 14);
 			getContentPane().add(lblCircunferencia);
 			
-			txtCircunferencia = new JTextField();
-			txtCircunferencia.setColumns(10);
-			txtCircunferencia.setBounds(261, 340, 200, 20);
-			getContentPane().add(txtCircunferencia);
-			
 			txtValorFace = new JTextField();
 			txtValorFace.setColumns(10);
 			txtValorFace.setBounds(34, 401, 200, 20);
@@ -155,46 +145,46 @@ public class Sugestao_Usuario extends JFrame {
 			lblPais.setBounds(481, 147, 46, 14);
 			getContentPane().add(lblPais);
 			
-			txtPais = new JTextField();
-			txtPais.setColumns(10);
-			txtPais.setBounds(481, 172, 200, 20);
-			getContentPane().add(txtPais);
-			
-			txtBorda = new JTextField();
-			txtBorda.setColumns(10);
-			txtBorda.setBounds(479, 228, 200, 20);
-			getContentPane().add(txtBorda);
-			
 			JLabel lblBorda = new JLabel("Borda");
 			lblBorda.setBounds(479, 203, 46, 14);
 			getContentPane().add(lblBorda);
-			
-			txtForma = new JTextField();
-			txtForma.setColumns(10);
-			txtForma.setBounds(479, 284, 200, 20);
-			getContentPane().add(txtForma);
 			
 			JLabel lblForma = new JLabel("Forma");
 			lblForma.setBounds(479, 259, 46, 14);
 			getContentPane().add(lblForma);
 			
-			txtDistribuicao = new JTextField();
-			txtDistribuicao.setColumns(10);
-			txtDistribuicao.setBounds(479, 340, 200, 20);
-			getContentPane().add(txtDistribuicao);
-			
 			JLabel lblDistribuicao = new JLabel("Distribuição");
 			lblDistribuicao.setBounds(479, 315, 68, 14);
 			getContentPane().add(lblDistribuicao);
 			
-			txtComposicao = new JTextField();
-			txtComposicao.setColumns(10);
-			txtComposicao.setBounds(479, 401, 200, 20);
-			getContentPane().add(txtComposicao);
-			
 			JLabel lblComposicao = new JLabel("Composição");
 			lblComposicao.setBounds(479, 376, 68, 14);
 			getContentPane().add(lblComposicao);
+			
+			JComboBox ComboDistribuicao = new JComboBox();
+			ComboDistribuicao.setBounds(481, 339, 200, 22);
+			getContentPane().add(ComboDistribuicao);
+			
+			JComboBox ComboComposicao = new JComboBox();
+			ComboComposicao.setBounds(481, 400, 200, 22);
+			getContentPane().add(ComboComposicao);
+			
+			JComboBox ComboPais = new JComboBox();
+			ComboPais.setBounds(479, 171, 200, 22);
+			getContentPane().add(ComboPais);
+			
+			JComboBox ComboForma = new JComboBox();
+			ComboForma.setBounds(481, 283, 200, 22);
+			getContentPane().add(ComboForma);
+			
+			JComboBox ComboBorda = new JComboBox();
+			ComboBorda.setBounds(481, 228, 200, 22);
+			getContentPane().add(ComboBorda);
+			
+			txtCircunferencia = new JTextField();
+			txtCircunferencia.setColumns(10);
+			txtCircunferencia.setBounds(261, 340, 200, 20);
+			getContentPane().add(txtCircunferencia);
 		
 		
 			this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

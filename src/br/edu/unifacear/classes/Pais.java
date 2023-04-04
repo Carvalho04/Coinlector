@@ -8,14 +8,13 @@ public class Pais {
 	
 	private int id;
 	private String nome;
-	private String continente;
-	
-	
-	//Properties
-	
+	private Continente continente;
 	public int getId() {
 		return id;
 	}
+
+	//Properties
+	
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -25,35 +24,35 @@ public class Pais {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getContinente() {
+	public Continente getContinente() {
 		return continente;
 	}
-	public void setContinente(String continente) {
+	public void setContinente(Continente continente) {
 		this.continente = continente;
 	}
+
 	
-	
-	//Constructor
+	//Constructors
 	
 	public Pais() {
 		super();
 	}
-	
 
-	public Pais(int id, String nome, String continente) {
+	public Pais(int id, String nome, Continente continente) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.continente = continente;
 	}
-	
-	
-	//Methods
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(continente, id, nome);
 	}
+
+	
+	//Methods
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -65,12 +64,12 @@ public class Pais {
 		Pais other = (Pais) obj;
 		return Objects.equals(continente, other.continente) && id == other.id && Objects.equals(nome, other.nome);
 	}
-	
-	
+
 	@Override
 	public String toString() {
 		return "Pais [id=" + id + ", nome=" + nome + ", continente=" + continente + "]";
 	}
 	
-		
+	
 }
+	

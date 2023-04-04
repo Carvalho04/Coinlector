@@ -17,9 +17,9 @@ public class ColecaoBo {
 	
 	public void salvarColecao(Colecao colecao) throws Exception {
 
-		if (colecao.getId() <= 0) {
-			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
-		}
+//		if (colecao.getId() <= 0) {
+//			throw new Exception ("Id não pode ser igual ou menor a zero (0)");
+//		}
 		
 		ColecaoDao colecaoDao = new ColecaoDao();
 		colecaoDao.salvarColecao(colecao);	
