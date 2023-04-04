@@ -10,6 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import br.edu.unifacear.bo.UsuarioBo;
+import br.edu.unifacear.classes.TipoUsuario;
+import br.edu.unifacear.classes.Usuario;
+
 public class Cadastro_Adm extends JFrame{
 
 	private JTextField txtNome;
@@ -78,6 +82,19 @@ public class Cadastro_Adm extends JFrame{
 		JButton btnCadastrar = new JButton("Cadastrar");
 		btnCadastrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				TipoUsuario tipo = new TipoUsuario();
+				tipo.setId(1);
+				Usuario usuario = new Usuario();
+				usuario.setNome(txtNome.getText());
+				usuario.setCpf(txtCpf.getText());
+				usuario.setEmail(txtEmail.getText());
+				usuario.setLogin(txtLogin.getText());
+				usuario.setSenha(txtSenha.getText());
+				usuario.setTipoUsuario(tipo);
+				
+				
 			}
 		});
 		btnCadastrar.setBounds(225, 249, 132, 23);

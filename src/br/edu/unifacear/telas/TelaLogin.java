@@ -20,6 +20,7 @@ public class TelaLogin extends JFrame{
 	public String acesso;
 	private JTextField txtLogin;
 	private JPasswordField txtSenha;
+	public String Acesso;
 	
 	
 	public TelaLogin() {
@@ -56,8 +57,22 @@ public class TelaLogin extends JFrame{
 		JButton btnEntrar = new JButton("Entrar");
 		btnEntrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+				boolean resposta = consultar(txtLogin.getSelectedText().toString(), txtSenha.getPassword());//Pego usuario e senha digitados e jogo no metodo consultar para validar
+		        if (resposta == true) {//Se Usuario e senha estiverem corretos
+		            if (Acesso == "Usuario") { //Aqui é a variável se for "Inventario" abro a tela RDI
+		                TelaLogin.this.dispose();
+		                Cadastro_Usuario usuario = new Cadastro_Usuario();
+		            }else if(Acesso == "Administrador"){ //Aqui é a variável se for "Operacao" abro a tela RDIOpe
+		                TelaLogin.this.dispose();
+		                Cadastro_Adm Adm = new Cadastro_Adm();
+		            }
+		        } else {
+		            JOptionPane.showMessageDialog(rootPane, "Usuário e(ou) senha incorretos!\nEntre em contato com setor de Inventário");
+		        }
+		    }    
 
-			    }   
 							
 		});
 				
@@ -95,6 +110,41 @@ public class TelaLogin extends JFrame{
 		
 		
 	}
+	
+	
+	public boolean consultar(String login, String senha) {
+        boolean autenticado = false;
+        String sql;
+        Connection conn;
+        try {
+        	conn = Fabrica.getConnection();
+
+            sql = "SELECT login, senha, acesso FROM Usuario WHERE login=? and senha=? ";
+            PreparedStatement ps;
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, login);
+            ps.setString(2, senha);
+
+
+            ResultSet rs;
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+            	Acesso = rs.getString(acesso);
+                String log = rs.getString("login");
+                String pass = rs.getString("senha");
+                
+                autenticado = true;
+            } else {
+                ps.close();
+                return autenticado;
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, e);
+        }
+        return autenticado;
+    }
+	
 	
 	public static void main (String []args) {
 	

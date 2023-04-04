@@ -28,7 +28,7 @@ public UsuarioDao () {}
 				con = new Fabrica().getConnection();
 				System.out.println("Conectado ao Banco");
 				
-				String sql = "INSERT INTO USUARIO 	(NOME, CPF, EMAIL, LOGIN, SENHA, ID_TPUSUARIO)" + 
+				String sql = "INSERT INTO Usuario(NOME, CPF, EMAIL, LOGIN, SENHA, ID_TPUSUARIO)" + 
 				"VALUES (?, ?, ?, ?, ?, ?)";
 				PreparedStatement pst = con.prepareStatement(sql);
 				pst.setString(1, usuario.getNome());
